@@ -21,12 +21,12 @@ Site-Struktur usw. In diesem AddOn werden dazu die Id, der Sprach-Code
 und der Name des Artikels herangezogen. - Dieses AddOn lässt auch die
 Nutzung von Links in Normalform zu.</div>
 <br/>
-<div style="font-weight:bold;">RewriteRule in der .htaccess-Datei</div>
-<div style="padding-left:20px;">Links auf Artikel werden üblicherweise
+<b>RewriteRule in der .htaccess-Datei</b>
+<blockquote>Links auf Artikel werden üblicherweise
 in der Form &nbsp; <span style="white-space:nowrap;"><tt>
 RewriteRule ^(.*)$ index.php?%{QUERY_STRING} [L]</tt></span> &nbsp;
 umgeleitet. Da Redaxo keinen entsprechenden Artikel hat, landet die
-Umleitung auf dem Site-Startartikel.</div>
+Umleitung auf dem Site-Startartikel.</blockquote>
 <br/>
 <div style="font-weight:bold;">Setzen des Wunsch-URLs</div>
 <div style="padding-left:20px;">Dazu ist eine Erweiterung des
