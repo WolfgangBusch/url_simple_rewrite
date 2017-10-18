@@ -23,13 +23,12 @@ Nutzung von Links in Normalform zu.</div>
 <br/>
 <b>RewriteRule in der .htaccess-Datei</b>
 <blockquote>Links auf Artikel werden üblicherweise
-in der Form &nbsp; <span style="white-space:nowrap;"><tt>
-RewriteRule ^(.*)$ index.php?%{QUERY_STRING} [L]</tt></span> &nbsp;
-umgeleitet. Da Redaxo keinen entsprechenden Artikel hat, landet die
+in der Form &nbsp; <tt>RewriteRule ^(.*)$ index.php?%{QUERY_STRING} [L]</tt>
+ &nbsp; umgeleitet. Da Redaxo keinen entsprechenden Artikel hat, landet die
 Umleitung auf dem Site-Startartikel.</blockquote>
 <br/>
-<div style="font-weight:bold;">Setzen des Wunsch-URLs</div>
-<div style="padding-left:20px;">Dazu ist eine Erweiterung des
+<b>Setzen des Wunsch-URLs</b>
+<blockquote>Dazu ist eine Erweiterung des
 <b>Extension Point</b> <tt>URL_REWRITE</tt> erforderlich. Die am Extension
 Point aufgerufene Funktion gibt den Wunsch-URL zurück. Im Backend wird
 sie nur im Content-Kontext eines Artikels (edit, metainfo, functions)
@@ -37,10 +36,10 @@ aufgerufen und liefert für dessen Anzeige den Wert der Variablen
 <tt>$_SERVER[\'REQUEST_URI\']</tt>. Im Frontend wird sie nur
 innerhalb der Funktion <tt>rex_getUrl($article_id,$clang_id)</tt>
 aufgerufen und liefert (z. B. in Templates oder Modulen) den URL
-eines Artikels.</div>
+eines Artikels.</blockquote>
 <br/>
-<div style="font-weight:bold;">Manipulation des Frontend-Outputs</div>
-<div style="padding-left:20px;">Sie erfolgt durch eine Erweiterung
+<b>Manipulation des Frontend-Outputs</b>
+<blockquote>Sie erfolgt durch eine Erweiterung
 des <b>Extension Point</b> <tt>FE_OUTPUT</tt>. Die am Extension Point
 aufgerufene Funktion zeigt den aktuellen Artikel im Frontend an.
 Letzterer ist gemäß RewriteRule zunächst der Site-Startartikel. Am
@@ -48,13 +47,13 @@ Extension Point werden hier stattdessen Inhalt und Sprachversion des
 Artikels ermittelt und dargestellt, der dem angezeigten Link entspricht.
 Auch die Ergebnisse der Funktionen <tt>rex_article::getCurrentId()</tt>
 und <tt>rex_clang::getCurrentId()</tt> werden entsprechend korrigiert.
-</div>
+</blockquote>
 <br/>
-<div style="font-weight:bold;">Ausblick auf komplexere Wunsch-URLs</div>
-<div style="padding-left:20px;">Der hier beschriebene Rahmen kann
+<b>Ausblick auf komplexere Wunsch-URLs</b>
+<blockquote>Der hier beschriebene Rahmen kann
 beibehalten werden. Die folgenden Aufgaben sind aber anders als hier
 zu lösen.
-<ul style="padding-left:20px;">
+<ul>
     <li>Für die Konstruktion des Wunsch-URL aus Artikel-Id und
         Sprach-Id im Backend bietet sich ein Rückgriff auf den
         <tt>path</tt>-Parameter des Artikels sowie auf den
@@ -68,4 +67,4 @@ zu lösen.
         kann im URL, aber auch z. B. in einer Session-Variablen
         mitgeführt werden.</li>
 </ul>
-</div>
+</blockquote>
