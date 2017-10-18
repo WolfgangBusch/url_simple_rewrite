@@ -1,0 +1,14 @@
+package: url_simple_rewrite
+version: '1.2.2'
+author: 'Wolfgang Busch'
+supportpage: redaxo.org/forum/
+
+page:
+    title: 'translate:url_simple_rewrite'
+    perm: url_simple_rewrite[]
+    subpages:
+        introduction: { title: 'translate:introduction' }
+        description:  { title: 'translate:description' }
+
+requires:
+    redaxo: ^5.1.0
