@@ -3,7 +3,7 @@
  * URL-Rewrite Addon
  * @author wolfgang[at]busch-dettum[dot]de Wolfgang Busch
  * @package redaxo5
- * @version Oktober 2017
+ * @version November 2017
  */
 #
 class fe_output {
@@ -14,28 +14,20 @@ function output() {
    #   Wird dieser nicht gefunden oder ist offline, wird stattdessen
    #   der NotFound-Artikel ausgegeben.
    #   aufgerufene functions:
+   #      param_normurl()
+   #      article_from_normurl($param)
    #      self::get_article($req_url)
    #
    # --- anzuzeigender Artikel
    #   Aus $_SERVER["REQUEST_URI"] wird der auszugebende Artikel
    #   ermittelt. Ggf. alternativ der Notfound-Artikel.
-   $arr=explode("?",substr($_SERVER["REQUEST_URI"],1));
-   if($arr[0]=="index.php" and
-      (substr($arr[1],0,11)=="article_id=" or strpos($arr[1],"article_id=")>0)):
+   $param=param_normurl();
+   if(count($param)>=2):
      # --- aus der Normalform-URL
-     $brr=explode("&",$arr[1]);
-     for($i=0;$i<count($brr);$i=$i+1):
-        $crr=explode("=",$brr[$i]);
-        if($crr[0]=="article_id") $art_id  =$crr[1];
-        if($crr[0]=="clang")      $clang_id=$crr[1];
-        endfor;
-     $article=rex_article::get($art_id,$clang_id);
-     if($article==NULL):
-       $article=rex_article::getNotfoundArticle();
-       endif;
+     $article=article_from_normurl($param);
      else:
      # --- aus dem Wunsch-URL
-     $article=self::get_article($arr[0]);
+     $article=self::get_article($param[url]);
      endif;
    $art_id  =$article->getId();
    $clang_id=$article->getValue("clang_id");

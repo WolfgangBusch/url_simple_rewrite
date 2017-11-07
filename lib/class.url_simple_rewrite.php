@@ -3,7 +3,7 @@
  * URL-Rewrite Addon
  * @author wolfgang[at]busch-dettum[dot]de Wolfgang Busch
  * @package redaxo5
- * @version Oktober 2017
+ * @version November 2017
  */
 class url_rewrite {
 #
@@ -16,6 +16,7 @@ function rewrite($params) {
    #   - im Frontend-Fall wird der URL im Falle des Aufrufs von rex_getUrl()
    #                      bestimmt. Er ist der Rueckgabewerte von rex_getUrl(..).
    #   aufgerufene functions:
+   #      param_normurl()
    #      self::set_url($article)
    #      self::get_url($article)
    #
@@ -34,12 +35,9 @@ function rewrite($params) {
      $url="/".self::set_url($article);
      else:
      # --- Frontend
-     $arr=explode("?",substr($_SERVER["REQUEST_URI"],1));
-     if($arr[0]=="index.php" and
-        (substr($arr[1],0,11)=="article_id=" or strpos($arr[1],"article_id=")>0)):
+     $arr=param_normurl();
+     if(count($arr)>=2):
        #   Normalform-URL
-       $art_id=$article->getId();
-       $arr=rex_clang::getAll();
        if(count(rex_clang::getAll())>1):
          $str="&clang=".$clang_id=$article->getValue("clang_id");
          else:
