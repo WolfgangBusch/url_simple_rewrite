@@ -1,10 +1,10 @@
 # url_simple_rewrite
-<h3>Einfaches URL-Rewrite fÃ¼r Redaxo</h3>
+<h3>Einfaches URL-Rewrite für Redaxo 5</h3>
 <ul>
     <li>Dieses AddOn ist eine Erweiterung des Standard-Rewriters und
         nutzt den <b>Extension Point</b> <tt>URL_REWRITE</tt>. Es soll im
-        Wesentlichen nur als exemplarische EinfÃ¼hrung in die Funktionsweise
-        des Rewriters und als GerÃ¼st fÃ¼r die Entwicklung komplexerer
+        Wesentlichen nur als exemplarische Einführung in die Funktionsweise
+        des Rewriters und als Gerüst für die Entwicklung komplexerer
         Rewriter dienen.</li>
     <li>Zur Manipulation des Frontend-Output wird eine Erweiterung
         des <b>Extension Point</b> <tt>FE_OUTPUT</tt> genutzt.</li>
@@ -18,11 +18,11 @@ mit Verweis auf die Artikel-Id <tt>ID</tt> und die Sprach-Id <tt>CID</tt>.
 In der Regel soll stattdessen jeder Artikel einen &quot;Wunsch-URL&quot;
 erhalten, z. B. mit Hinweisen auf Themenkategorien, Artikelinhalt,
 Site-Struktur usw. In diesem AddOn werden dazu die Id, der Sprach-Code
-und der Name des Artikels herangezogen. - Dieses AddOn lÃ¤sst auch die
+und der Name des Artikels herangezogen. - Dieses AddOn lässt auch die
 Nutzung von Links in Normalform zu.</div>
 <br/>
 <b>RewriteRule in der .htaccess-Datei</b>
-<blockquote>Links auf Artikel werden Ã¼blicherweise
+<blockquote>Links auf Artikel werden üblicherweise
 in der Form &nbsp; <tt>RewriteRule ^(.*)$ index.php?%{QUERY_STRING} [L]</tt>
  &nbsp; umgeleitet. Da Redaxo keinen entsprechenden Artikel hat, landet die
 Umleitung auf dem Site-Startartikel.</blockquote>
@@ -30,9 +30,9 @@ Umleitung auf dem Site-Startartikel.</blockquote>
 <b>Setzen des Wunsch-URLs</b>
 <blockquote>Dazu ist eine Erweiterung des
 <b>Extension Point</b> <tt>URL_REWRITE</tt> erforderlich. Die am Extension
-Point aufgerufene Funktion gibt den Wunsch-URL zurÃ¼ck. Im Backend wird
+Point aufgerufene Funktion gibt den Wunsch-URL zurück. Im Backend wird
 sie nur im Content-Kontext eines Artikels (edit, metainfo, functions)
-aufgerufen und liefert fÃ¼r dessen Anzeige den Wert der Variablen
+aufgerufen und liefert für dessen Anzeige den Wert der Variablen
 <tt>$_SERVER[\'REQUEST_URI\']</tt>. Im Frontend wird sie nur
 innerhalb der Funktion <tt>rex_getUrl($article_id,$clang_id)</tt>
 aufgerufen und liefert (z. B. in Templates oder Modulen) den URL
@@ -42,7 +42,7 @@ eines Artikels.</blockquote>
 <blockquote>Sie erfolgt durch eine Erweiterung
 des <b>Extension Point</b> <tt>FE_OUTPUT</tt>. Die am Extension Point
 aufgerufene Funktion zeigt den aktuellen Artikel im Frontend an.
-Letzterer ist gemÃ¤ÃŸ RewriteRule zunÃ¤chst der Site-Startartikel. Am
+Letzterer ist gemäß RewriteRule zunächst der Site-Startartikel. Am
 Extension Point werden hier stattdessen Inhalt und Sprachversion des
 Artikels ermittelt und dargestellt, der dem angezeigten Link entspricht.
 Auch die Ergebnisse der Funktionen <tt>rex_article::getCurrentId()</tt>
@@ -52,19 +52,19 @@ und <tt>rex_clang::getCurrentId()</tt> werden entsprechend korrigiert.
 <b>Ausblick auf komplexere Wunsch-URLs</b>
 <blockquote>Der hier beschriebene Rahmen kann
 beibehalten werden. Die folgenden Aufgaben sind aber anders als hier
-zu lÃ¶sen.
+zu lösen.
 <ul>
-    <li>FÃ¼r die Konstruktion des Wunsch-URL aus Artikel-Id und
-        Sprach-Id im Backend bietet sich ein RÃ¼ckgriff auf den
+    <li>Für die Konstruktion des Wunsch-URL aus Artikel-Id und
+        Sprach-Id im Backend bietet sich ein Rückgriff auf den
         <tt>path</tt>-Parameter des Artikels sowie auf den
         Artikel-Cache an.</li>
-    <li>Zu einem Link auf eine Seite im Frontend ist der zugehÃ¶rige
+    <li>Zu einem Link auf eine Seite im Frontend ist der zugehörige
         Artikel samt Sprachversion zu ermitteln. Das Ergebnis muss
-        eindeutig und der Ermittlungsaufwand mÃ¶glichst gering sein.
-        Wird der URL z. B. als zusÃ¤tzlicher Artikelparameter (Meta
-        Info) mitgefÃ¼hrt, liefert ein SQL-Select auf die Tabelle
+        eindeutig und der Ermittlungsaufwand möglichst gering sein.
+        Wird der URL z. B. als zusätzlicher Artikelparameter (Meta
+        Info) mitgeführt, liefert ein SQL-Select auf die Tabelle
         <tt>rex_article</tt> den Artikelinhalt. Die Sprachversion
         kann im URL, aber auch z. B. in einer Session-Variablen
-        mitgefÃ¼hrt werden.</li>
+        mitgeführt werden.</li>
 </ul>
 </blockquote>
