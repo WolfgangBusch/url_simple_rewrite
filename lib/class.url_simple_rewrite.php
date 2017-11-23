@@ -39,7 +39,7 @@ function rewrite($params) {
      if(count($arr)>=2):
        #   Normalform-URL
        if(count(rex_clang::getAll())>1):
-         $str="&clang=".$clang_id=$article->getValue("clang_id");
+         $str="&clang=".$clang_id=$article->getClang();
          else:
          $str="";
          endif;
@@ -68,8 +68,8 @@ function set_url($article) {
    #   rex_article abgelegt werden.
    #
    $art_id  =$article->getId();
-   $clang_id=$article->getValue("clang_id");
-   $name    =$article->getValue("name");
+   $clang_id=$article->getClang();
+   $name    =$article->getName();
    $clang   =rex_clang::get($clang_id)->getCode();
    return $art_id."-".$clang."-".$name.".html";
    }
@@ -82,8 +82,8 @@ function get_url($article) {
    #   rex_article ausgelesen werden.
    #
    $art_id  =$article->getId();
-   $clang_id=$article->getValue("clang_id");
-   $name    =$article->getValue("name");
+   $clang_id=$article->getClang();
+   $name    =$article->getName();
    $clang   =rex_clang::get($clang_id)->getCode();
    return $art_id."-".$clang."-".$name.".html";
    }

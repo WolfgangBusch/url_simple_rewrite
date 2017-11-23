@@ -30,8 +30,8 @@ function output() {
      $article=self::get_article($param[url]);
      endif;
    $art_id  =$article->getId();
-   $clang_id=$article->getValue("clang_id");
-   $temp_id=$article->getValue("template_id");
+   $clang_id=$article->getClang();
+   $temp_id=$article->getTemplateId();
    #
    # --- neuer Artikel-Inhalt mit den Parametern des gefundenen Artikels
    $content=new rex_article_content;
@@ -67,8 +67,8 @@ function get_article($req_url) {
    # --- Artikel nicht gefunden oder Offline
    if($article==NULL) $article=rex_article::getNotfoundArticle();
    $brr=explode(".",$brr[2]);
-   if($article->getValue("name")!=$brr[0]) $article=rex_article::getNotfoundArticle();
-   if($article->getValue("status")<=0) $article=rex_article::getNotfoundArticle();
+   if($article->getName()!=$brr[0]) $article=rex_article::getNotfoundArticle();
+   if(!$article->isOnline()) $article=rex_article::getNotfoundArticle();
    return $article;
    }
 }
