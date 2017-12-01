@@ -3,7 +3,7 @@
  * URL-Rewrite Addon
  * @author wolfgang[at]busch-dettum[dot]de Wolfgang Busch
  * @package redaxo5
- * @version November 2017
+ * @version Dezember 2017
  */
 function param_normurl() {
    #   Rueckgabe des URL und der URL-Parameter bei einem URL in Normalform
