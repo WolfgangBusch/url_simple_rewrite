@@ -3,7 +3,7 @@
  * URL-Rewrite Addon
  * @author wolfgang[at]busch-dettum[dot]de Wolfgang Busch
  * @package redaxo5
- * @version November 2017
+ * @version Dezember 2017
  */
 require_once __DIR__.'/functions/function.general.php';
 require_once __DIR__.'/lib/class.url_simple_rewrite.php';
