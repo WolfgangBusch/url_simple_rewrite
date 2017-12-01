@@ -1,4 +1,10 @@
 # url_simple_rewrite
+<h4>Version 1.2.5</h4>
+<ul>
+    <li>Die ungenutzten Dateien install.php und uninstall.php entfallen jetzt.</li>
+    <li>Die Software ist natürlich gemäß MIT-Lizenz frei nutzbar, nachlesbar in
+        einer neuen Datei LICENSE.md.</li>
+</ul>
 <h4>Version 1.2.4</h4>
 <ul>
     <li>An etlichen Stellen werden jetzt anstelle der Methode getValue("value")
