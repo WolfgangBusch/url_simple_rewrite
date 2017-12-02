@@ -1,4 +1,8 @@
 # url_simple_rewrite
+<h4>Version 1.2.6</h4>
+    <li>Der englische Sprachzweig ist angelegt (Datei en_gb.lang im Ordner
+        lang). Eine Übersetzung der gesamten Beschreibung ist nicht vorgesehen.</li>
+</ul>
 <h4>Version 1.2.5</h4>
 <ul>
     <li>Die ungenutzten Dateien install.php und uninstall.php entfallen jetzt.</li>
