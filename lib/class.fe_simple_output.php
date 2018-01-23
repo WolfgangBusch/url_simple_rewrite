@@ -67,7 +67,7 @@ function get_article($req_url) {
    # --- Artikel nicht gefunden oder Offline
    if($article==NULL) $article=rex_article::getNotfoundArticle();
    $brr=explode(".",$brr[2]);
-   if($article->getName()!=$brr[0]) $article=rex_article::getNotfoundArticle();
+   if($article->getName()!=urldecode($brr[0])) $article=rex_article::getNotfoundArticle();
    if(!$article->isOnline()) $article=rex_article::getNotfoundArticle();
    return $article;
    }
