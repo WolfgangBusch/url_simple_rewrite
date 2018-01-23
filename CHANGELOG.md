@@ -1,4 +1,8 @@
 # url_simple_rewrite
+<h4>Version 1.2.7</h4>
+    <li>Artikel werden jetzt aus ihrem URL gefunden, auch wenn letzterer Blanks,
+        Sonderzeichen oder Umlaute enthalten (wichtig für Navigationen).</li>
+</ul>
 <h4>Version 1.2.6</h4>
     <li>Der englische Sprachzweig ist angelegt (Datei en_gb.lang im Ordner
         lang). Eine Übersetzung der gesamten Beschreibung ist nicht vorgesehen.</li>
