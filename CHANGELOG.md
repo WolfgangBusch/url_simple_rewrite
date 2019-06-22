@@ -1,4 +1,14 @@
 # url_simple_rewrite
+<h4>Version 2.0</h4>
+<ul>
+    <li>Der Code ist vollständig überarbeitet und mit 'error_reporting(E_ALL);'
+        überprüft.</li>
+    <li>Der Extension Point FE_OUTPUT wird nicht benötigt und daher nicht
+        mehr benutzt.</li>
+    <li>Der gesamte Source-Code ist auf UTF-8 umgestellt.</li>
+    <li>Alle im AddOn verwendeten Functions sind in einer Klasse im Ordner
+        lib zusammengefasst.</li>
+</ul>
 <h4>Version 1.2.7</h4>
     <li>Artikel werden jetzt aus ihrem URL gefunden, auch wenn letzterer Blanks,
         Sonderzeichen oder Umlaute enthalten (wichtig für Navigationen).</li>
