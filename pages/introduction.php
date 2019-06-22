@@ -3,7 +3,8 @@
  * URL-Rewrite Addon
  * @author wolfgang[at]busch-dettum[dot]de Wolfgang Busch
  * @package redaxo5
- * @version Dezember 2017
+ * @version Juni 2019
  */
-require_once __DIR__.'/../help.php';
+$intro=file_get_contents(__DIR__.'/../README.md');
+echo substr($intro,strlen($this->getPackageId())+2);
 ?>
