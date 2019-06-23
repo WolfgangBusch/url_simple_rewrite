@@ -27,7 +27,8 @@ durch eine Umleitungsregel
 <div style="padding-left:20px;">
 <tt>RewriteRule ^(.*)$ index.php?%{QUERY_STRING} [L]</tt>
 &nbsp; &nbsp; &nbsp; (Datei <tt>.htaccess</tt>)</div>
-an das Redaxo CMS übergeben und weist zunächst auf den
+an das Redaxo CMS übergeben. Links auf Dateien oder Verzeichnisse
+erfolgen ohne Umleitung. Die Umleitung führt zunächst auf den
 Site-Startartikel. Damit stattdessen der gewünschte Artikel
 angezeigt wird, muss die aktuelle Artikel-Id
 <code>rex_article::getCurrentId()</code> mit der Id des Artikels
