@@ -1,4 +1,8 @@
 # url_simple_rewrite
+<h4>Version 2.1</h4>
+<ul>
+    <li>Aus systematischen Gründen wurde wieder eine Datei 'help.php' eingefügt.</li>
+</ul>
 <h4>Version 2.0</h4>
 <ul>
     <li>Der Code ist vollständig überarbeitet und mit 'error_reporting(E_ALL);'
