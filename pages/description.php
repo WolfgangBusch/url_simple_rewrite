@@ -44,7 +44,7 @@ ermitteln.</div>
 und Sprach-Id nicht so einfach wie hier zu ermitteln. Aber der
 beschriebene Rahmen kann generell beibehalten werden.
 Zu beachten ist:</div>
-<ul>
+<ul style="margin-top:0px;">
     <li>Zu einem Link auf eine Seite im Frontend muss der
         zugehörige Artikel samt Sprachversion eindeutig zu
         ermitteln sein.</li>
